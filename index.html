@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8" />
+		<!--
+		IE8 support, see AngularJS Internet Explorer Compatibility http://docs.angularjs.org/guide/ie
+		For Firefox 3.6, you will also need to include jQuery and ECMAScript 5 shim
+		-->
+		<!--[if lt IE 9]>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+		<script>
+		  document.createElement('ui-select');
+		  document.createElement('ui-select-match');
+		  document.createElement('ui-select-choices');
+		</script>
+		<![endif]-->
+		
+		<!--Using MyWealth css-->
+		<link rel="stylesheet" href="lib/css/bootstrap-3.0.0.css">
+		<link rel="stylesheet" href="lib/css/buttons.css">
+		<link rel="stylesheet" href="lib/css/checkboxdropdown.css">
+		<link rel="stylesheet" href="lib/css/mywealth-theme.css">
+		<link rel="stylesheet" href="lib/css/buttongroups.css">
+		<link rel="stylesheet" href="lib/css/forms.css">
+		<link rel="stylesheet" href="src/css/watchlist.css">
+		<!-- Icons loaded from here -->
+		<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
+		
+		<script type="text/javascript" src="lib/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="lib/js/angular.min.js"></script>
+		<script type="text/javascript" src="lib/js/angular-rt-popup.js"></script>
+		<script type="text/javascript" src="lib/js/angular-multiselect.js"></script>
+
+		<script type="text/javascript" src="src/angular/watchlistCtrl.js"></script>
+		
+        <script>
+            angular.module('myApp', ['rt.popup','watchlist']);
+        </script>
+    </head>
+    <body>
+		<div id="sdw-container">
+			<div id="main-wrapper">
+				<div id="content-container">
+					<div id="content-wrapper" class="container" style="height: 500px;">
+						<div class="invest-content-wrapper invest-shares-container ng-scope">
+						
+							<h1>Popup</h1>
+							<button data-popup-show="src/templates/ManageWatchlists.html" class="btn btn-primary">Show popup!</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

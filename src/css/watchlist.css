@@ -1,0 +1,11 @@
+.popover {
+	max-width: 400px;
+}
+
+.watchlist-container {
+	width: 300px;
+}
+
+.watchlist-container .content {
+	min-height: 500px;
+}
