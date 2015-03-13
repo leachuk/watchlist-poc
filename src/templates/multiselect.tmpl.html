@@ -1,11 +1,12 @@
 <div class="btn-group">
  
    <p>{{header}}</p>
-
   <ul class="dropdown-menu">
     <li>
       <input class="form-control input-sm" type="text" ng-model="searchText.label" autofocus="autofocus" placeholder="Filter" />
     </li>
+  </ul>
+  <ul class="dropdown-menu dropdown-size">
     <li ng-show="multiple" role="presentation" class="">
       <button class="btn btn-link btn-xs" ng-click="checkAll()" type="button"><i class="glyphicon glyphicon-ok"></i> Check all</button>
       <button class="btn btn-link btn-xs" ng-click="uncheckAll()" type="button"><i class="glyphicon glyphicon-remove"></i> Uncheck all</button>

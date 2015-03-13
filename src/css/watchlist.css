@@ -15,8 +15,14 @@
 }
 
 .watchlist-container .dropdown-menu {
+	position: relative;
 	display: block;
 	width: 100%;
+}
+
+.watchlist-container .dropdown-menu.dropdown-size {
+	max-height: 200px;
+	overflow:	auto;
 }
 
 

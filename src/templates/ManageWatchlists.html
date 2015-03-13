@@ -4,9 +4,9 @@
         <p>This is a popup</p>
 
             <p>{{test}}</p>
-            <multiselect class="" multiple="true" ms-selected="There are {{selectedCar.length}} car(s) selected"
-                         ng-model="selectedCar" ms-header="Select Some Cars"
-                         options="c.name for c in cars"
+            <multiselect class="" multiple="true" ms-selected="There are {{watchlistSelected.length}} item(s) selected"
+                         ng-model="watchlistSelected" ms-header="Select some watchlists"
+                         options="c.name for c in watchlistData"
                          change="selected()">
             </multiselect>
 
