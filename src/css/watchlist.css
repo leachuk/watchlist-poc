@@ -9,3 +9,14 @@
 .watchlist-container .content {
 	min-height: 500px;
 }
+
+.watchlist-container .btn-group {
+	width: 100%;
+}
+
+.watchlist-container .dropdown-menu {
+	display: block;
+	width: 100%;
+}
+
+

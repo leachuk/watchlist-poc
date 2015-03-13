@@ -1,22 +1,24 @@
-<div class="watchlist-container">
+<div class="watchlist-container" ng-controller="WatchlistCtrl">
     <h3 class="title">Hello!</h3>
     <div class="content">
         <p>This is a popup</p>
-        <div ng-controller="WatchlistCtrl">
+
             <p>{{test}}</p>
-            <multiselect class="input-lg" multiple="true" ms-selected="There are {{selectedCar.length}} car(s) selected"
+            <multiselect class="" multiple="true" ms-selected="There are {{selectedCar.length}} car(s) selected"
                          ng-model="selectedCar" ms-header="Select Some Cars"
                          options="c.name for c in cars"
                          change="selected()">
             </multiselect>
-            <div class="well well-sm">
-                {{selectedCar}}
-            </div>
-        </div>
 
-        <a ng-click="hidePopover()" class="btn btn-primary" style="margin-top:300px">Go away!</a>
+
+
+       
     </div>
     <div class="footer">
+		<div class="well well-sm">
+			{{selectedCar}}
+		</div>
+		<a ng-click="hidePopover()" class="btn btn-primary">Done</a>
         <p>xxxx</p>
     </div>
 </div>
