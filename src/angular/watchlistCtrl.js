@@ -41,7 +41,9 @@ app.filter('propsFilter', function() {
 
 app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
   $scope.test = "foo";
-
+  $scope.isMultipleSelect = false;
+  $scope.addWatchlistLabel = "Watchlist name";
+  
   console.log("In watchlistCtrl");
   console.log($scope);
   

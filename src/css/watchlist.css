@@ -40,3 +40,11 @@
 	float: right;
 }
 
+.watchlist-container .footer .watchlist-edit {
+	margin: 5px;
+}
+
+.watchlist-container .footer .watchlist-edit input{
+	height: 32px;
+}
+
