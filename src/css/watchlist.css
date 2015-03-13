@@ -22,7 +22,21 @@
 
 .watchlist-container .dropdown-menu.dropdown-size {
 	max-height: 200px;
-	overflow:	auto;
+	overflow: auto;
 }
-
+.watchlist-container .header {
+	position: relative;
+	padding: 10px;
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(200, 200, 200);
+    border-bottom-style: solid;
+}
+.watchlist-container .header .title  {
+	text-align: center;
+}
+.watchlist-container .header  .btn {
+	float: right;
+}
 
