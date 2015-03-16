@@ -42,7 +42,11 @@ var app = angular.module('watchlist', ['ui.multiselect']);
 app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
   $scope.test = "foo";
   $scope.isMultipleSelect = false;
+  $scope.isEditEnabled = true;
+  $scope.isEditSelected = false;
+  $scope.isRenameItemSelected = false;
   
+  //Add Watchlist button functionality
   $scope.addWatchlistName = "";
   $scope.showAddWatchlist = false;
   $scope.addWatchlistLabel = "Watchlist name";
@@ -58,12 +62,18 @@ app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
 	}
   };
   
-  console.log("In watchlistCtrl");
-  console.log($scope);
+  //Edit Watchlist button functionality
+  $scope.editWatchlist = function(){
+	console.log("Edit watchlist selected");
+	$scope.isEditSelected = false;
+  };
   
-  $scope.cars = [{id:1, name: 'Audi'}, {id:2, name: 'BMW'}, {id:3, name: 'Honda'}];
-  $scope.selectedCar = [];
-	
+  //Edit Watchlist item functionality
+  $scope.renameItem = function(item){
+	console.log("Rename watchlist item selected:" + item.label.name);
+	$scope.isRenameItemSelected = true;
+  };
+  
   $scope.watchlistSelected = {};
   $scope.watchlistData = [
     {name: 'My Default watchlist 1', extra: 'foo'},

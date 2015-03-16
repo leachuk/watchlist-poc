@@ -1,6 +1,7 @@
 <div class="watchlist-container" ng-controller="WatchlistCtrl">
 	<div class="header">
 		<a ng-show="isMultipleSelect" ng-click="hidePopover()" class="btn btn-primary">OK</a>
+		<a ng-show="isEditEnabled" ng-click="editWatchlist()" class="btn btn-primary">Edit</a>
 		<h3 class="title">Add to...</h3>
 	</div>
     <div class="content">

@@ -6,8 +6,9 @@
   </ul>
   <ul class="dropdown-menu dropdown-size">
     <li ng-repeat="i in items | filter:searchText">
-      <a ng-click="select(i); focus()">
-        <i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label.name}}</a>
+	  <a class="watchlist-item-edit" ng-click="renameItem(i); focus()"><i class="glyphicon glyphicon-pencil"></i></a>
+      <a class="watchlist-item-label" ng-click="select(i); focus()"><i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label.name}}</a>
+	  
     </li>
   </ul>
 </div>

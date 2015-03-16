@@ -20,12 +20,31 @@
 	width: 100%;
 }
 
+/* .watchlist-container .dropdown-menu  li:hover{
+	background-color: #ffcb05;
+} */
+
+.watchlist-container ul.dropdown-menu li:hover {
+	background: #FFCB05;
+}
+
 .watchlist-container .dropdown-menu.dropdown-size {
 	max-height: 200px;
 	overflow: auto;
 	border: 0px;
 	border-bottom: 1px solid #cccccc;
 }
+
+.watchlist-container .dropdown-menu .watchlist-item-label{
+	clear: left;
+	cursor: pointer;
+}
+.watchlist-container .dropdown-menu .watchlist-item-edit{
+	float: right;
+	padding-top: 7px;
+	cursor: pointer;
+}
+
 .watchlist-container .header {
 	position: relative;
 	padding: 10px;
