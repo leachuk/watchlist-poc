@@ -50,8 +50,12 @@ app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
 	$scope.showAddWatchlist = !$scope.showAddWatchlist;
   };
   $scope.addWatchlist = function(name){
-	console.log("Add new watchlist name:" + name);
-	$scope.addWatchlistName = "";
+	if (name == ""){
+		console.log("Add new watchlist. Blank name");
+	}else{
+		console.log("Add new watchlist name:" + name);
+		$scope.addWatchlistName = "";
+	}
   };
   
   console.log("In watchlistCtrl");
