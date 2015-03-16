@@ -6,7 +6,7 @@
     <div class="content">
 		<multiselect class="" multiple="{{isMultipleSelect}}" ms-selected="There are {{watchlistSelected.length}} item(s) selected"
 					 ng-model="watchlistSelected" ms-header="Select some watchlists"
-					 options="c.name for c in watchlistData"
+					 options="c for c in watchlistData"
 					 change="selected()">
 		</multiselect>
     </div>
@@ -25,6 +25,5 @@
 		<div class="well well-sm clearfix">
 			{{watchlistSelected}}
 		</div>	
-        <p>xxxx</p>
     </div>
 </div>

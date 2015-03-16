@@ -1,7 +1,5 @@
 <div class="btn-group">
- 
-   <p>{{header}}</p>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu searchfilter" ng-show="fasle">
     <li>
       <input class="form-control input-sm" type="text" ng-model="searchText.label" autofocus="autofocus" placeholder="Filter" />
     </li>
@@ -9,7 +7,7 @@
   <ul class="dropdown-menu dropdown-size">
     <li ng-repeat="i in items | filter:searchText">
       <a ng-click="select(i); focus()">
-        <i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label}}</a>
+        <i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label.name}}</a>
     </li>
   </ul>
 </div>

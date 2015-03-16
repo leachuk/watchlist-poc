@@ -7,7 +7,7 @@
 }
 
 .watchlist-container .content {
-	min-height: 250px;
+	//min-height: 250px;
 }
 
 .watchlist-container .btn-group {
@@ -23,12 +23,13 @@
 .watchlist-container .dropdown-menu.dropdown-size {
 	max-height: 200px;
 	overflow: auto;
+	border: 0px;
+	border-bottom: 1px solid #cccccc;
 }
 .watchlist-container .header {
 	position: relative;
 	padding: 10px;
 	padding-bottom: 15px;
-	margin-bottom: 10px;
     border-bottom-width: 1px;
     border-bottom-color: rgb(200, 200, 200);
     border-bottom-style: solid;
@@ -52,5 +53,9 @@
 
 .watchlist-container .footer .watchlist-edit input{
 	height: 32px;
+}
+
+.watchlist-container .footer .well {
+	margin-bottom:	0px;
 }
 
