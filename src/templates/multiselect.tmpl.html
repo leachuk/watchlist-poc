@@ -4,6 +4,7 @@
       <input class="form-control input-sm" type="text" ng-model="searchText.label" autofocus="autofocus" placeholder="Filter" />
     </li>
   </ul>
+  [{{selecteditem.value}}]
   <ul class="dropdown-menu dropdown-size">
     <li ng-repeat="i in items | filter:searchText">
 		<div class="watchlist-show-item" ng-class="{hidden: selecteditem.value == $index && isRenameItemSelected}">

@@ -45,42 +45,7 @@ app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
   $scope.isEditEnabled = true;
   $scope.isEditSelected = false;
   $scope.isRenameItemSelected = false;
-  $scope.selecteditem = {value: -1};
-  
-  //Add Watchlist button functionality
-  $scope.addWatchlistName = "";
-  $scope.showAddWatchlist = false;
-  $scope.addWatchlistLabel = "Watchlist name";
-  $scope.toggleAddWatchlist = function(){
-	$scope.showAddWatchlist = !$scope.showAddWatchlist;
-  };
-  $scope.addWatchlist = function(name){
-	if (name == ""){
-		console.log("Add new watchlist. Blank name");
-	}else{
-		console.log("Add new watchlist name:" + name);
-		$scope.addWatchlistName = "";
-	}
-  };
-  
-  //Edit Watchlist button functionality
-  $scope.editWatchlist = function(){
-	console.log("Edit watchlist selected");
-	$scope.isEditSelected = false;
-  };
-  
-  //Edit Watchlist item functionality
-  $scope.renameItem = function(item){
-	$scope.isRenameItemSelected = !$scope.isRenameItemSelected;
-	console.log("Rename watchlist item selected: " + item.label.name);
-	console.log("isRenameItemSelected: " + $scope.isRenameItemSelected);
-  };
-  
-  //Delete Watchlist item functionality
-  $scope.deleteItem = function(item){
-	console.log("Delete watchlist item selected:" + item.label.name);
-  };
-  
+ 
   $scope.watchlistSelected = {};
   $scope.watchlistData = [
     {name: 'My Default watchlist 1', extra: 'foo'},
