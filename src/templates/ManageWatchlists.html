@@ -12,17 +12,17 @@
     </div>
     <div class="footer">
 		<div class="watchlist-edit">
-			<a id="show-add-watchlist" ng-click="showAddWatchlist()">Create a new Watchlist</a>
-			<div class="watchlist-add-form">
+			<a id="show-add-watchlist" ng-click="toggleAddWatchlist()" ng-show="!showAddWatchlist">Create a new Watchlist</a>
+			<div class="watchlist-add-form" ng-show="showAddWatchlist">
 				<div class="col-sm-10 no-padding">
-					<input class="form-control col-sm-10" type="text" ng-model="searchText.label" placeholder="{{addWatchlistLabel}}" />
+					<input class="form-control col-sm-10" type="text" ng-model="addWatchlistName" placeholder="{{addWatchlistLabel}}" />
 				</div>
 				<div class="col-sm-2 no-padding">
-					<a ng-click="hidePopover()" class="btn btn-primary">OK</a>
+					<a ng-click="toggleAddWatchlist();addWatchlist(addWatchlistName)" class="btn btn-primary">OK</a>
 				</div>
 			</div>
 		</div>
-		<div class="well well-sm">
+		<div class="well well-sm clearfix">
 			{{watchlistSelected}}
 		</div>	
         <p>xxxx</p>

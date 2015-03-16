@@ -8,41 +8,51 @@ var app = angular.module('watchlist', ['ui.multiselect']);
  * performs a AND between 'name: $select.search' and 'age: $select.search'.
  * We want to perform a OR.
  */
-app.filter('propsFilter', function() {
-  return function(items, props) {
-    var out = [];
+// app.filter('propsFilter', function() {
+  // return function(items, props) {
+    // var out = [];
 
-    if (angular.isArray(items)) {
-      items.forEach(function(item) {
-        var itemMatches = false;
+    // if (angular.isArray(items)) {
+      // items.forEach(function(item) {
+        // var itemMatches = false;
 
-        var keys = Object.keys(props);
-        for (var i = 0; i < keys.length; i++) {
-          var prop = keys[i];
-          var text = props[prop].toLowerCase();
-          if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
-            itemMatches = true;
-            break;
-          }
-        }
+        // var keys = Object.keys(props);
+        // for (var i = 0; i < keys.length; i++) {
+          // var prop = keys[i];
+          // var text = props[prop].toLowerCase();
+          // if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
+            // itemMatches = true;
+            // break;
+          // }
+        // }
 
-        if (itemMatches) {
-          out.push(item);
-        }
-      });
-    } else {
-      // Let the output be the input untouched
-      out = items;
-    }
+        // if (itemMatches) {
+          // out.push(item);
+        // }
+      // });
+    // } else {
+      // // Let the output be the input untouched
+      // out = items;
+    // }
 
-    return out;
-  };
-});
+    // return out;
+  // };
+// });
 
 app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
   $scope.test = "foo";
   $scope.isMultipleSelect = false;
+  
+  $scope.addWatchlistName = "";
+  $scope.showAddWatchlist = false;
   $scope.addWatchlistLabel = "Watchlist name";
+  $scope.toggleAddWatchlist = function(){
+	$scope.showAddWatchlist = !$scope.showAddWatchlist;
+  };
+  $scope.addWatchlist = function(name){
+	console.log("Add new watchlist name:" + name);
+	$scope.addWatchlistName = "";
+  };
   
   console.log("In watchlistCtrl");
   console.log($scope);

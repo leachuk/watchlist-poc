@@ -41,7 +41,13 @@
 }
 
 .watchlist-container .footer .watchlist-edit {
-	margin: 5px;
+	height:	30px;
+	line-height: 30px;
+	margin: 15px;
+	text-align: center;
+}
+.watchlist-container .footer .watchlist-edit a {
+	cursor: pointer;
 }
 
 .watchlist-container .footer .watchlist-edit input{
