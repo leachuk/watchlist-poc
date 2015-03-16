@@ -74,6 +74,11 @@ app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
 	$scope.isRenameItemSelected = true;
   };
   
+  //Delete Watchlist item functionality
+  $scope.deleteItem = function(item){
+	console.log("Delete watchlist item selected:" + item.label.name);
+  };
+  
   $scope.watchlistSelected = {};
   $scope.watchlistData = [
     {name: 'My Default watchlist 1', extra: 'foo'},

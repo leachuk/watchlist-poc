@@ -20,10 +20,6 @@
 	width: 100%;
 }
 
-/* .watchlist-container .dropdown-menu  li:hover{
-	background-color: #ffcb05;
-} */
-
 .watchlist-container ul.dropdown-menu li:hover {
 	background: #FFCB05;
 }
@@ -43,6 +39,11 @@
 	float: right;
 	padding-top: 7px;
 	cursor: pointer;
+	clear: left;
+}
+
+ul.dropdown-menu > li > a {
+	padding: 7px 10px; 
 }
 
 .watchlist-container .header {
