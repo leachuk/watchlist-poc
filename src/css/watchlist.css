@@ -31,19 +31,32 @@
 	border-bottom: 1px solid #cccccc;
 }
 
-.watchlist-container .dropdown-menu .watchlist-item-label{
+.watchlist-container  .dropdown-menu div.watchlist-edit-item-form {
+	display: inline-block;
+	padding-top: 5px;
+	width: 100%
+}
+.watchlist-container  .dropdown-menu div.watchlist-edit-item-form .btn {
+	height: 30px;
+}
+
+.watchlist-container .dropdown-menu div.watchlist-show-item{
+	padding: 10px
+}
+
+.watchlist-container .dropdown-menu a.watchlist-item-label{
 	clear: left;
 	cursor: pointer;
 }
-.watchlist-container .dropdown-menu .watchlist-item-edit{
+.watchlist-container .dropdown-menu a.watchlist-item-edit{
 	float: right;
-	padding-top: 7px;
+	padding: 0px 7px 0px 7px;
 	cursor: pointer;
 	clear: left;
 }
 
-ul.dropdown-menu > li > a {
-	padding: 7px 10px; 
+ul.dropdown-menu > li > div > a {
+	text-decoration: none;
 }
 
 .watchlist-container .header {

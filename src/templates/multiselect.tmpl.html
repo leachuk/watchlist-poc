@@ -6,9 +6,19 @@
   </ul>
   <ul class="dropdown-menu dropdown-size">
     <li ng-repeat="i in items | filter:searchText">
-	  <a class="watchlist-item-edit" ng-click="deleteItem(i); focus()"><i class="glyphicon glyphicon-remove"></i></a>
-	  <a class="watchlist-item-edit" ng-click="renameItem(i); focus()"><i class="glyphicon glyphicon-pencil"></i></a>
-      <a class="watchlist-item-label" ng-click="select(i); focus()"><i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label.name}}</a>  
+		<div class="watchlist-show-item" ng-class="{hidden: selecteditem.value == $index && isRenameItemSelected}">
+			<a class="watchlist-item-edit" ng-click="deleteItem(i); focus()"><i class="glyphicon glyphicon-remove"></i></a>
+			<a class="watchlist-item-edit" ng-click="renameItem(i); focus(); selecteditem.value = $index;"><i class="glyphicon glyphicon-pencil"></i></a>
+			<a class="watchlist-item-label" ng-click="select(i); focus();"><i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label.name}}</a>  
+		</div>
+		<div class="watchlist-edit-item-form" ng-show="selecteditem.value == $index && isRenameItemSelected">
+			<div class="col-sm-10 no-padding">
+				<input class="form-control col-sm-10" type="text" ng-model="addWatchlistName" placeholder="{{addWatchlistLabel}}" />
+			</div>
+			<div class="col-sm-2 no-padding">
+				<a ng-click="renameConfirm(i); selecteditem.value = $index;" class="btn btn-primary">OK</a>
+			</div>
+		</div>
     </li>
   </ul>
 </div>
