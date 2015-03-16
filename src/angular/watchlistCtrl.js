@@ -45,7 +45,6 @@ app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
   $scope.isEditEnabled = true;
   $scope.isEditSelected = false;
   $scope.isRenameItemSelected = false;
-  $scope.isRenameConfirmSelected = false;
   $scope.selecteditem = {value: -1};
   
   //Add Watchlist button functionality
@@ -72,16 +71,9 @@ app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
   
   //Edit Watchlist item functionality
   $scope.renameItem = function(item){
-	console.log("Rename watchlist item selected:" + item.label.name);
-	console.log(item);
-	$scope.isRenameConfirmSelected = !$scope.isRenameConfirmSelected;
 	$scope.isRenameItemSelected = !$scope.isRenameItemSelected;
-  };
-  $scope.renameConfirm = function(item){
-	console.log("Rename confirm watchlist item selected:" + item.label.name);
-	console.log(item);
-	$scope.isRenameConfirmSelected = !$scope.isRenameConfirmSelected;
-	$scope.isRenameItemSelected = !$scope.isRenameItemSelected;
+	console.log("Rename watchlist item selected: " + item.label.name);
+	console.log("isRenameItemSelected: " + $scope.isRenameItemSelected);
   };
   
   //Delete Watchlist item functionality
