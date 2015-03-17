@@ -41,10 +41,7 @@ var app = angular.module('watchlist', ['ui.multiselect']);
 
 app.controller('WatchlistCtrl', function($scope, $http, $timeout) {
   $scope.test = "foo";
-  $scope.isMultipleSelect = false;
-  $scope.isEditEnabled = true;
-  $scope.isEditSelected = false;
-  $scope.isRenameItemSelected = false;
+
  
   $scope.watchlistSelected = {};
   $scope.watchlistData = [
