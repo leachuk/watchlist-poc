@@ -93,11 +93,13 @@ ul.dropdown-menu > li > div > a {
 	margin-bottom:	0px;
 }
 
+.watchlist-container .watchlist-edit > a.disabled,
 .watchlist-container .dropdown-menu > .disabled > div > a,
 .watchlist-container .dropdown-menu > .disabled > div > a:hover,
 .watchlist-container .dropdown-menu > .disabled > div > a:focus {
   color: #999999;
 }
+.watchlist-container .watchlist-edit > a.disabled,
 .watchlist-container .dropdown-menu > .disabled > div > a:hover,
 .watchlist-container .dropdown-menu > .disabled > div > a:focus {
   text-decoration: none;
