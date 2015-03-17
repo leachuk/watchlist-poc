@@ -1,25 +1,49 @@
-<div class="btn-group">
-  <ul class="dropdown-menu searchfilter" ng-show="false">
-    <li>
-      <input class="form-control input-sm" type="text" ng-model="searchText.label" autofocus="autofocus" placeholder="Filter" />
-    </li>
-  </ul>
-  [{{selecteditem.value}}]
-  <ul class="dropdown-menu dropdown-size">
-    <li ng-repeat="i in items | filter:searchText">
-		<div class="watchlist-show-item" ng-class="{hidden: selecteditem.value == $index && isRenameItemSelected}">
-			<a class="watchlist-item-edit" ng-click="deleteItem(i); focus()"><i class="glyphicon glyphicon-remove"></i></a>
-			<a class="watchlist-item-edit" ng-click="renameItem(i); focus(); selecteditem.value = $index;"><i class="glyphicon glyphicon-pencil"></i></a>
-			<a class="watchlist-item-label" ng-click="select(i); focus();"><i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label.name}}</a>  
+<div>
+	<div class="header">
+		<a ng-show="isMultipleSelect" ng-click="hidePopover()" class="btn btn-primary">OK</a>
+		<a ng-show="isEditEnabled" ng-click="editWatchlist()" class="btn btn-primary">Edit</a>
+		<h3 class="title">Add to...</h3>
+	</div>
+	<div class="content">
+		<div class="btn-group">
+		  <ul class="dropdown-menu searchfilter" ng-show="false">
+			<li>
+			  <input class="form-control input-sm" type="text" ng-model="searchText.label" autofocus="autofocus" placeholder="Filter" />
+			</li>
+		  </ul>
+		  <ul class="dropdown-menu dropdown-size">
+			<li ng-repeat="i in items | filter:searchText" ng-class="{disabled: selecteditem.value != $index && isRenameItemSelected}">
+				<div class="watchlist-show-item" ng-class="{hidden: selecteditem.value == $index && isRenameItemSelected}">
+					<a class="watchlist-item-edit" ng-click="deleteItem(i); focus()"><i class="glyphicon glyphicon-remove"></i></a>
+					<a class="watchlist-item-edit" ng-click="renameItem(i); focus(); selecteditem.value = $index;"><i class="glyphicon glyphicon-pencil"></i></a>
+					<a class="watchlist-item-label" ng-click="select(i); focus();"><i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label.name}}</a>  
+				</div>
+				<div class="watchlist-edit-item-form" ng-show="selecteditem.value == $index && isRenameItemSelected">
+					<div class="col-sm-10 no-padding">
+						<input class="form-control col-sm-10" type="text" ng-model="addWatchlistName" placeholder="{{addWatchlistLabel}}" />
+					</div>
+					<div class="col-sm-2 no-padding">
+						<a ng-click="renameItem(i); selecteditem.value = $index;" class="btn btn-primary">OK</a>
+					</div>
+				</div>
+			</li>
+		  </ul>
 		</div>
-		<div class="watchlist-edit-item-form" ng-show="selecteditem.value == $index && isRenameItemSelected">
-			<div class="col-sm-10 no-padding">
-				<input class="form-control col-sm-10" type="text" ng-model="addWatchlistName" placeholder="{{addWatchlistLabel}}" />
-			</div>
-			<div class="col-sm-2 no-padding">
-				<a ng-click="renameItem(i); selecteditem.value = $index;" class="btn btn-primary">OK</a>
+	</div>
+	<div class="footer">
+		<div class="watchlist-edit">
+			<a id="show-add-watchlist" ng-click="toggleAddWatchlist()" ng-show="!showAddWatchlist">Create a new Watchlist</a>
+			<div class="watchlist-add-form" ng-show="showAddWatchlist">
+				<div class="col-sm-10 no-padding">
+					<input class="form-control col-sm-10" type="text" ng-model="addWatchlistName" placeholder="{{addWatchlistLabel}}" />
+				</div>
+				<div class="col-sm-2 no-padding">
+					<a ng-click="toggleAddWatchlist();addWatchlist(addWatchlistName)" class="btn btn-primary">OK</a>
+				</div>
 			</div>
 		</div>
-    </li>
-  </ul>
+		<div class="well well-sm clearfix">
+			{{watchlistSelected}}
+		</div>	
+	</div>
 </div>

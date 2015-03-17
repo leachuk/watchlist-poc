@@ -4,6 +4,7 @@
 
 .watchlist-container {
 	width: 300px;
+	min-height: 350px; /* important to force initial popup size when clicked or loaded for the first time */
 }
 
 .watchlist-container .content {
@@ -92,3 +93,19 @@ ul.dropdown-menu > li > div > a {
 	margin-bottom:	0px;
 }
 
+.watchlist-container .dropdown-menu > .disabled > div > a,
+.watchlist-container .dropdown-menu > .disabled > div > a:hover,
+.watchlist-container .dropdown-menu > .disabled > div > a:focus {
+  color: #999999;
+}
+.watchlist-container .dropdown-menu > .disabled > div > a:hover,
+.watchlist-container .dropdown-menu > .disabled > div > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.watchlist-container .dropdown-menu  li.disabled:hover {
+	background: transparent;
+}
